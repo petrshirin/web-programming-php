@@ -12,6 +12,8 @@
 
         $validator = new OrderValidator();
         $result = $validator->validate($_POST);
+        $link = mysqli_connect($hostname, $username, $password, $dbName);
+
 
         if (isset($result['errors'])) {
             foreach($result['errors'] as $name => $value) {
